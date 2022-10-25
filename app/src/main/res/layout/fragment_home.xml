@@ -11,8 +11,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="30sp"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:layout_gravity="center"
-        android:text="Leagues" />
+        android:text="Leagues"
+        android:clickable="true"
+        />
 
 </FrameLayout>
