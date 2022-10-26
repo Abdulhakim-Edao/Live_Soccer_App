@@ -2,8 +2,11 @@ package com.example.fragments
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.fragments.databinding.ActivityMainBinding
+
 import com.example.fragments.ui.league.MyPageAdapter
+import com.example.fragments.R
+import com.example.fragments.databinding.ActivityMainBinding
+
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
