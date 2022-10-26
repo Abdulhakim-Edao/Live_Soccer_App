@@ -4,12 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="12dp"
-    android:layout_marginLeft="16dp"
-    android:layout_marginRight="16dp"
+    android:layout_margin="10dp"
     android:id="@+id/linear"
-    card_view:cardBackgroundColor="#FFFF"
-    card_view:cardCornerRadius="8dp"
+    card_view:cardBackgroundColor="#F1F0F3"
+    card_view:cardCornerRadius="20dp"
     card_view:contentPadding="10dp"
     android:foreground="?selectableItemBackground"
     android:clickable="true">
@@ -25,9 +23,10 @@
 
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                card_view:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:gravity="center_vertical"
+
                 card_view:layout_constraintEnd_toEndOf="parent"
                 card_view:layout_constraintStart_toStartOf="parent"
                 card_view:layout_constraintTop_toTopOf="parent">
@@ -37,8 +36,7 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_marginRight="20dp"
-                    card_view:layout_constraintStart_toStartOf="parent"
-                     />
+                    card_view:layout_constraintStart_toStartOf="parent" />
 
                 <TextView
                     android:id="@+id/nameTxt"
@@ -46,8 +44,7 @@
                     android:layout_height="wrap_content"
                     android:text="League"
                     android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
-                    card_view:layout_constraintBottom_toBottomOf="parent"
-                    />
+                    card_view:layout_constraintBottom_toBottomOf="parent" />
             </LinearLayout>
 
 
