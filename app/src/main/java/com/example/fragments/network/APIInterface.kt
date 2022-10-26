@@ -11,10 +11,7 @@ import java.util.*
 //https://4c1f0b2a-213b-47b6-af21-89e893ab2c25.mock.pstmn.io/v3/fixtures/statistics?fixture=868066
 interface APIInterface {
     @GET("https://4c1f0b2a-213b-47b6-af21-89e893ab2c25.mock.pstmn.io/v3/fixtures/statistics?fixture=868066")
-    fun getData(): Call<TeamStat>
-
-    @GET("https://4c1f0b2a-213b-47b6-af21-89e893ab2c25.mock.pstmn.io/v3/fixtures?league=39&season=2022&from=2022-10-22&to=2022-10-24")
-    fun getFixtureData(): Call<FixtureMain>
+    fun getTeamStatData(): Call<TeamStat>
 
     @GET("https://4c1f0b2a-213b-47b6-af21-89e893ab2c25.mock.pstmn.io/v3/leagues?country=England&season=2022")
     fun getLegue(): Call<LeagueMain>

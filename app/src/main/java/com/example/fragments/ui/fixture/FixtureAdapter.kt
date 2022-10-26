@@ -9,19 +9,13 @@ import com.bumptech.glide.Glide
 import com.example.fragments.R
 import com.example.fragments.model.fixture.FixtureMain
 import com.example.fragments.model.fixture.Response
-
-import kotlinx.android.synthetic.main.item_team_stat.view.*
-
-import kotlinx.android.synthetic.main.activity_another_fixture.*
-import kotlinx.android.synthetic.main.activity_another_fixture.view.*
 import kotlinx.android.synthetic.main.item_fixture.view.*
 
 
-class FixtureAdapter(res: FixtureMain) : RecyclerView.Adapter<FixtureAdapter.MyViewHolder>() {
+class FixtureAdapter(var res: FixtureMain,  var listener: OnItemClickListener) : RecyclerView.Adapter<FixtureAdapter.MyViewHolder>() {
 
-//    var rvDate:DateAdapter? = null
-    private var response = res
-    class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+
+   inner class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView),View.OnClickListener {
         fun bind(response1: List<Response>) {
             itemView.team1.text = response1[adapterPosition].teams.home.name
             itemView.team2.text = response1[adapterPosition].teams.away.name
@@ -29,6 +23,16 @@ class FixtureAdapter(res: FixtureMain) : RecyclerView.Adapter<FixtureAdapter.MyV
             Glide.with(itemView.context).load(response1[adapterPosition].teams.home.logo).into(itemView.logo)
             Glide.with(itemView.context).load(response1[adapterPosition].teams.away.logo).into(itemView.logo2)
             itemView.result.text = response1[adapterPosition].goals.home.toString() + " - " + response1[adapterPosition].goals.away.toString()
+        }
+        init{
+            itemView.setOnClickListener(this)
+        }
+
+        override fun onClick(v: View?) {
+            val position = adapterPosition
+            if(position != RecyclerView.NO_POSITION){
+                listener.onItemClick(position)
+            }
         }
     }
 
@@ -49,15 +53,19 @@ class FixtureAdapter(res: FixtureMain) : RecyclerView.Adapter<FixtureAdapter.MyV
 //        //set adapter layout manager
 ////        recyclerView.layoutManager = LinearLayoutManager(holder.itemView.context, LinearLayoutManager.HORIZONTAL, false)
 //        recyclerView.adapter = rvDate
-        holder.bind(response.response)
+        holder.bind(res.response)
     }
 
     //override the getItemCount method
     override fun getItemCount(): Int {
-        return if (response.response.isNotEmpty()) {
-            response.response.size
+        return if (res.response.isNotEmpty()) {
+            res.response.size
         } else {
             0
         }
+    }
+
+    interface OnItemClickListener{
+        fun onItemClick(position: Int)
     }
 }
