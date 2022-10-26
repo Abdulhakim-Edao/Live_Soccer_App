@@ -1,7 +1,9 @@
 package com.example.fragments.ui.league
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.OnClickListener
 import android.view.ViewGroup
+import android.widget.AdapterView.OnItemClickListener
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fragments.R
 
@@ -11,15 +13,30 @@ import com.bumptech.glide.Glide
 
 import kotlinx.android.synthetic.main.item_league.view.*
 
-class HomeAdapter(res: LeagueMain) : RecyclerView.Adapter<HomeAdapter.MyViewHolder>() {
-    private var response = res
+class HomeAdapter(
+   var res: LeagueMain,
+    var listener: OnItemClickListener
+    ) :
+    RecyclerView.Adapter<HomeAdapter.MyViewHolder>() {
+
+
     //create a view holder class
-    class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView),
+        View.OnClickListener{
         //create a function to bind the data to the view
         fun bind(response: List<Response>) {
             itemView.nameTxt.text = response[adapterPosition].league.name
             Glide.with(itemView.context).load(response[adapterPosition].league.logo).into(itemView.logoImg)
+        }
+        init{
+            itemView.setOnClickListener(this)
+        }
 
+        override fun onClick(v: View?) {
+            val position = adapterPosition
+            if(position != RecyclerView.NO_POSITION){
+                listener.onItemClick(position)
+            }
         }
 //        init{
 //            itemView.setOnClickListener(this)
@@ -44,15 +61,15 @@ class HomeAdapter(res: LeagueMain) : RecyclerView.Adapter<HomeAdapter.MyViewHold
 
     //override the onBindViewHolder method
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        holder.bind( response.response)
+        holder.bind( res.response)
     }
 
     //override the getItemCount method
     override fun getItemCount(): Int {
-        return response.response.size
+        return res.response.size
     }
 
-//    interface OnItemClickListener{
-//        fun onItemClick(position: Int)
-//    }
+    interface OnItemClickListener{
+        fun onItemClick(position: Int)
+    }
 }
