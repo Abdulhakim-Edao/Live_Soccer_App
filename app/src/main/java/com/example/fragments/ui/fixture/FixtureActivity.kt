@@ -13,7 +13,11 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 
-class FixtureActivity : AppCompatActivity() {
+
+
+class FixtureActivity : AppCompatActivity(), FixtureAdapter.OnItemClickListener {
+
+
     private lateinit var binding: ActivityAnotherFixtureBinding
     private var adapter : FixtureAdapter? = null
     var leagueId:Int? = 0
