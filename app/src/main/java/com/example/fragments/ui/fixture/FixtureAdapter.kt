@@ -22,6 +22,7 @@ class FixtureAdapter(var res: FixtureMain,  var listener: OnItemClickListener) :
             //set image with glide
             Glide.with(itemView.context).load(response1[adapterPosition].teams.home.logo).into(itemView.logo)
             Glide.with(itemView.context).load(response1[adapterPosition].teams.away.logo).into(itemView.logo2)
+
             itemView.result.text = response1[adapterPosition].goals.home.toString() + " - " + response1[adapterPosition].goals.away.toString()
         }
         init{
