@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="12dp"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
+    android:id="@+id/linear"
+    card_view:cardBackgroundColor="#FFFF"
+    card_view:cardCornerRadius="8dp"
+    card_view:contentPadding="10dp"
+    android:foreground="?selectableItemBackground"
+    android:clickable="true">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:id="@+id/home_team_name_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+
+                android:layout_marginTop="5dp"
+                android:padding="5dp"
+
+                android:text="Team A"
+                android:textStyle="bold"
+                card_view:layout_constraintStart_toStartOf="parent"
+                card_view:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/home_team_logo"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                card_view:layout_constraintStart_toStartOf="parent"
+                card_view:layout_constraintTop_toBottomOf="@id/home_team_name_text_view" />
+
+
+            <TextView
+                android:id="@+id/elapsed_time_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="40:56"
+                android:textColor="?colorSecondary"
+                android:textStyle="bold"
+                card_view:layout_constraintBottom_toTopOf="@id/goals_text_view"
+                card_view:layout_constraintEnd_toStartOf="@id/away_team_logo"
+                card_view:layout_constraintStart_toEndOf="@+id/home_team_logo"
+                card_view:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/goals_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3-2"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+                card_view:layout_constraintBottom_toBottomOf="parent"
+                card_view:layout_constraintEnd_toStartOf="@id/away_team_logo"
+                card_view:layout_constraintStart_toEndOf="@+id/home_team_logo"
+                card_view:layout_constraintTop_toBottomOf="@+id/elapsed_time_text_view" />
+
+            <TextView
+                android:id="@+id/away_team_name_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="25dp"
+                android:padding="5dp"
+                android:text="Team B"
+                android:textStyle="bold"
+                card_view:layout_constraintEnd_toEndOf="parent"
+                card_view:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/away_team_logo"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                card_view:layout_constraintEnd_toEndOf="parent"
+                card_view:layout_constraintTop_toBottomOf="@id/away_team_name_text_view" />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
+
+
+
+<!--<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:layout_margin="@dimen/default_margin"-->
+<!--    app:cardCornerRadius="0dp"-->
+<!--    app:cardElevation="@dimen/card_elevation">-->
+
+<!--    -->
+<!--    -->
+<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:padding="@dimen/default_padding">-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/home_team_name_text_view"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:textStyle="bold"-->
+<!--            app:layout_constraintEnd_toEndOf="@id/home_team_logo"-->
+<!--            app:layout_constraintStart_toStartOf="@id/home_team_logo"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            tools:text="Team A" />-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/home_team_logo"-->
+<!--            android:layout_width="40dp"-->
+<!--            android:layout_height="40dp"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/home_team_name_text_view" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/elapsed_time_text_view"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:textStyle="bold"-->
+<!--            android:textColor="?colorSecondary"-->
+<!--            app:layout_constraintEnd_toStartOf="@id/away_team_logo"-->
+<!--            app:layout_constraintStart_toEndOf="@+id/home_team_logo"-->
+<!--            app:layout_constraintBottom_toTopOf="@id/goals_text_view"-->
+<!--            tools:text="40:56" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/goals_text_view"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toStartOf="@id/away_team_logo"-->
+<!--            app:layout_constraintStart_toEndOf="@+id/home_team_logo"-->
+<!--            tools:text="3-2" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/away_team_name_text_view"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:textStyle="bold"-->
+<!--            app:layout_constraintEnd_toEndOf="@id/away_team_logo"-->
+<!--            app:layout_constraintStart_toStartOf="@+id/away_team_logo"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            tools:text="Team B" />-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/away_team_logo"-->
+<!--            android:layout_width="40dp"-->
+<!--            android:layout_height="40dp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/away_team_name_text_view" />-->
+
+<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--</com.google.android.material.card.MaterialCardView>-->
