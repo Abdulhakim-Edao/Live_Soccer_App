@@ -38,38 +38,38 @@ import javax.security.auth.callback.Callback
 class LiveFixturesFragment(var date: String, var leagueId : Int) : Fragment() {
 
     lateinit var liveFixturesAdapter: LiveFixturesAdapter
+    lateinit var fixtureViewModel: FixtureViewModel
+
     val supportFragmentManager: FragmentManager? = null
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        initViewModel()
+//        initViewModel()
+
         return inflater.inflate(R.layout.fragment_fixtures, container, false)
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
 
-
     }
 
-    private fun initViewModel(){
-        val viewModel = FixtureViewModel()
-        viewModel.makeApiCall()
-
-        viewModel.getFixture().observe(viewLifecycleOwner) {   //observe the live data
-
-            liveFixturesAdapter = LiveFixturesAdapter(it)
-            fixturesRCV.layoutManager = LinearLayoutManager(context)
-            fixturesRCV.adapter = liveFixturesAdapter
-
-        }
-    }
-
-//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-//        super.onViewCreated(view, savedInstanceState)
+//    private fun initViewModel(){
+//        fixtureViewModel = FixtureViewModel()
+////        fixtureViewModel.getF()
 //
+//        fixtureViewModel.getFixture().observe(viewLifecycleOwner) {   //observe the live data
+//
+//            liveFixturesAdapter = LiveFixturesAdapter(it)
+//            fixturesRCV.layoutManager = LinearLayoutManager(context)
+//            fixturesRCV.adapter = liveFixturesAdapter
+//
+//        }
 //    }
+
+
 
 }

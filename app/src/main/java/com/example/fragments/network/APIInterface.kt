@@ -7,6 +7,9 @@ import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Headers
 import retrofit2.http.Path
+import retrofit2.http.Query
+import java.time.LocalDate
+import java.util.*
 
 // Creating the API Interface able to send the request and get the response.
 interface APIInterface {
@@ -18,8 +21,11 @@ interface APIInterface {
 //   @GET("/v3/fixtures?league=39&season=2022&from=2022-10-22&to=2022-10-24")
 //   fun  getFixtures(): Call<FixturesResponse>
 
-    @GET("posts")
-    fun getFixtures(): Call<FixturesResponse>
+@GET("/v3/fixtures")
+    fun getFixtures(@Query("league") league:Int,
+                            @Query("season") season:Int,
+                            @Query("date") date: Date
+): Call<FixturesResponse>
 
 //    @GET("v3/fixtures?league={id}&season={year}&from=2022-10-22&to=2022-10-24")
 //    fun  getFixtures(@Path("id" ) id: Int, @Path("year") year: String): Call<List<LiveFixture>>

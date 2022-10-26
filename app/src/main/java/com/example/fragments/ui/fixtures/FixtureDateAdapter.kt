@@ -26,15 +26,15 @@ class FixtureDateAdapter(var context: Context, var leagueId: Int) : RecyclerView
         val view =  LayoutInflater.from(parent.context).inflate(R.layout.days, parent, false)
         var cal : Calendar = Calendar.getInstance()
         var today = cal.get(Calendar.DATE)
-        var fragment = LiveFixturesFragment(today.toString(), leagueId)
-        var activity = context as FixturesActivity
-        activity.supportFragmentManager!!.beginTransaction().add(R.id.fixtures_container, fragment).addToBackStack(null).commit()
+//        var fragment = LiveFixturesFragment(today.toString(), leagueId)
+//        var activity = context as FixturesActivity
+//        activity.supportFragmentManager!!.beginTransaction().add(R.id.fixtures_container, fragment).addToBackStack(null).commit()
         return MyViewHolder(view)
     }
 
 //    override fun onBindViewHolder(holder: MyViewHolder, position: Int): LiveFixturesFragment {
-        var cal : Calendar = Calendar.getInstance()
-        var today = cal.get(Calendar.DATE)
+//        var cal : Calendar = Calendar.getInstance()
+//        var today = cal.get(Calendar.DATE)
 //        return LiveFixturesFragment(today)
 //    }
 
@@ -53,11 +53,11 @@ class FixtureDateAdapter(var context: Context, var leagueId: Int) : RecyclerView
         }
         holder.itemView.date.text = dateList[position].toString()
 
-        holder.itemView.date.setOnClickListener{
-            var fragment = LiveFixturesFragment(dateList[position], leagueId)
-            var activity = context as FixturesActivity
-            activity.supportFragmentManager!!.beginTransaction().replace(R.id.fixtures_container, fragment).addToBackStack(null).commit()
-        }
+//        holder.itemView.date.setOnClickListener{
+//            var fragment = LiveFixturesFragment(dateList[position], leagueId)
+//            var activity = context as FixturesActivity
+//            activity.supportFragmentManager!!.beginTransaction().replace(R.id.fixtures_container, fragment).addToBackStack(null).commit()
+//        }
     }
 
     override fun getItemCount(): Int {
