@@ -29,7 +29,7 @@ class TeamStatActivityViewModel : ViewModel(){
             .create(APIInterface::class.java)
 
         viewModelScope.launch {
-            val response = api.getData().awaitResponse()
+            val response = api.getTeamStatData().awaitResponse()
             withContext(Dispatchers.Main){
                 if(response.isSuccessful){
                     response1.value = response.body()
