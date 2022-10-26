@@ -42,7 +42,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
                 tools:itemCount="20"
-                tools:listitem="@layout/item_team_stat" />
+                tools:listitem="@layout/item_fixture" />
         </ScrollView>
 
     </LinearLayout>

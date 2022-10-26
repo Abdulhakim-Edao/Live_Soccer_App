@@ -1,5 +1,6 @@
 package com.example.fragments.ui.league
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -8,6 +9,7 @@ import com.example.fragments.databinding.ActivityLeagueBinding
 import com.example.fragments.databinding.ActivityMainBinding
 import com.example.fragments.model.league.LeagueMain
 import com.example.fragments.model.league.Response
+import com.example.fragments.ui.fixture.AnotherFixtureActivity
 
 class LeagueActivity : AppCompatActivity(), HomeAdapter.OnItemClickListener {
     lateinit var binding:ActivityLeagueBinding
@@ -40,8 +42,11 @@ class LeagueActivity : AppCompatActivity(), HomeAdapter.OnItemClickListener {
     }
 
     override fun onItemClick(position: Int) {
-        Toast.makeText(this, "Item $position clicked And League name ${leagueResponse!![position].league.name}", Toast.LENGTH_SHORT).show()
+    var intent = Intent(this, AnotherFixtureActivity::class.java)
+        var leagueId = leagueResponse!![position].league.id.toString()
+        intent.putExtra("leagueId", leagueId)
 
+        startActivity(intent)
         adapter?.notifyItemChanged(position)
     }
 }

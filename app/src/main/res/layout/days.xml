@@ -3,17 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
+    android:layout_marginStart="20dp"
+
     android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/date"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="Oct-25"
+        android:onClick="dateOnClick"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:gravity="center"
+        android:background="@color/purple_700"
+        android:textColor="@color/white"
         android:clickable="true"
-        android:background="@color/teal_200"/>
+        android:textStyle="bold"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>

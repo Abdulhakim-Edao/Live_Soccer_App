@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/teal_300"
+    tools:context=".ui.fixture.AnotherFixtureActivity">
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.05"
+            android:gravity="center_horizontal"
+            android:weightSum="1"
+            android:orientation="horizontal">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvDate"
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:layout_weight="0.06"
+                android:background="@color/purple_700"
+                tools:listitem="@layout/days"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+        </LinearLayout>
+        <!--        add list view with rvDate id here-->
+        <!--        <ListView-->
+        <!--            android:id="@+id/rvDate"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="0dp"-->
+        <!--            android:layout_weight="0.06"-->
+        <!--            android:background="@color/teal_400"-->
+        <!--            android:orientation="horizontal"-->
+        <!--            android:padding="5dp"-->
+        <!--            tools:listitem="@layout/days"-->
+        <!--            android:scrollbars="horizontal"/>-->
+
+
+        <!--        <ScrollView-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="0dp"-->
+        <!--            android:layout_weight="1"-->
+        <!--            android:layout_margin="10dp"-->
+        <!--            android:scrollbars="vertical|horizontal"-->
+        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent">-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.95"
+            android:orientation="vertical"
+            android:padding="10dp">
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="0.96"
+                android:scrollbars="vertical|horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="parent">
+
+
+                <!--            <androidx.recyclerview.widget.RecyclerView-->
+                <!--                android:id="@+id/rvStandings"-->
+                <!--                android:layout_width="match_parent"-->
+                <!--                android:layout_height="wrap_content"-->
+                <!--                app:layout_constraintEnd_toEndOf="parent"-->
+                <!--                app:layout_constraintStart_toStartOf="parent"-->
+                <!--                />-->
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvStandings"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layoutManager="LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:listitem="@layout/item_fixture"
+                    app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
+
+            </ScrollView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

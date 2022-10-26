@@ -30,7 +30,7 @@ class TeamStatAdapter(res: TeamStat) : RecyclerView.Adapter<TeamStatAdapter.MyVi
 
     //override the onCreateViewHolder method
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_team_stat, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_fixture, parent, false)
         return MyViewHolder(view)
     }
 
