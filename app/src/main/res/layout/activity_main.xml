@@ -51,4 +51,16 @@
 
     </androidx.viewpager2.widget.ViewPager2>
 
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/vTest"
+        android:layout_width="match_parent"
+        android:layout_height="817dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/tlayout"
+        app:layout_constraintStart_toStartOf="@+id/vpager">
+
+    </androidx.viewpager2.widget.ViewPager2>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

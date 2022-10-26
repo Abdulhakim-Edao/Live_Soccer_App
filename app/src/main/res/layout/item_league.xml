@@ -1,81 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="5dp"
-    android:id="@+id/standings_item_layout">
+    android:layout_marginTop="12dp"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
+    android:id="@+id/linear"
+    card_view:cardBackgroundColor="#FFFF"
+    card_view:cardCornerRadius="8dp"
+    card_view:contentPadding="10dp"
+    android:foreground="?selectableItemBackground"
+    android:clickable="true">
 
-    <LinearLayout
-        android:id="@+id/linearLayout5"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
-        <LinearLayout
-            android:layout_width="314dp"
-            android:layout_height="match_parent"
-            android:layout_marginStart="0dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginEnd="0dp"
-            android:layout_weight="3"
-            android:orientation="horizontal"
-            android:weightSum="10"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
 
             <LinearLayout
-                android:id="@+id/linearLayout8"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
-                android:orientation="horizontal"
-                android:weightSum="3">
+                card_view:layout_constraintBottom_toBottomOf="parent"
+                card_view:layout_constraintEnd_toEndOf="parent"
+                card_view:layout_constraintStart_toStartOf="parent"
+                card_view:layout_constraintTop_toTopOf="parent">
 
-
-                <LinearLayout
-                    android:id="@+id/linearLayout7"
-                    android:layout_width="15dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1.9"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:id="@+id/rank"
-                        android:layout_width="43dp"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        android:layout_marginLeft="32dp"
-                        android:layout_weight="30"
-                        android:textStyle=""
-                        tools:text="1." />
-
-
-                </LinearLayout>
+                <ImageView
+                    android:id="@+id/logoImg"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="20dp"
+                    card_view:layout_constraintStart_toStartOf="parent"
+                     />
 
                 <TextView
-                    android:id="@+id/teamName"
-                    android:layout_width="331dp"
+                    android:id="@+id/nameTxt"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginStart="10dp"
-                    android:layout_weight="30"
-                    android:ellipsize="end"
-                    android:maxLines="1"
-                    android:textStyle="bold"
-                    tools:text="Team A" />
-
-
+                    android:text="League"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                    card_view:layout_constraintBottom_toBottomOf="parent"
+                    />
             </LinearLayout>
 
 
-        </LinearLayout>
 
-    </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

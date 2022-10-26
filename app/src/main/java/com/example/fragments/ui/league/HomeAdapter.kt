@@ -4,12 +4,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fragments.R
-import com.example.fragments.model.league.League
+
 import com.example.fragments.model.league.LeagueMain
 import com.example.fragments.model.league.Response
-//import com.bumptech.glide.Glide
+import com.bumptech.glide.Glide
 
-import kotlinx.android.synthetic.main.item_team_stat.view.*
+import kotlinx.android.synthetic.main.item_league.view.*
 
 class HomeAdapter(res: LeagueMain) : RecyclerView.Adapter<HomeAdapter.MyViewHolder>() {
     private var response = res
@@ -17,18 +17,28 @@ class HomeAdapter(res: LeagueMain) : RecyclerView.Adapter<HomeAdapter.MyViewHold
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         //create a function to bind the data to the view
         fun bind(response: List<Response>) {
+            itemView.nameTxt.text = response[adapterPosition].league.name
+            Glide.with(itemView.context).load(response[adapterPosition].league.logo).into(itemView.logoImg)
 
-            itemView.teamName.text = response[adapterPosition].league.name
-
-//            Glide.with(itemView.context).load(standing[0][adapterPosition].team.logo).into(itemView.logo)
         }
+//        init{
+//            itemView.setOnClickListener(this)
+//        }
+//        override fun onClick(view: View){
+//            val position = adapterPosition
+//            if(position != RecyclerView.NO_POSITION){
+//                listener.onItemClick(position)
+//            }
+//
+//        }
 
     }
 
 
+
     //override the onCreateViewHolder method
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_team_stat, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_league, parent, false)
         return MyViewHolder(view)
     }
 
@@ -41,4 +51,8 @@ class HomeAdapter(res: LeagueMain) : RecyclerView.Adapter<HomeAdapter.MyViewHold
     override fun getItemCount(): Int {
         return response.response.size
     }
+
+//    interface OnItemClickListener{
+//        fun onItemClick(position: Int)
+//    }
 }

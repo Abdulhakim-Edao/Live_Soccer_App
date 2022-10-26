@@ -1,21 +1,18 @@
 package com.example.fragments.ui.league
 
-import android.content.Intent
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import androidx.fragment.app.Fragment
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.GridLayoutManager
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fragments.R
-import com.example.fragments.databinding.FragmentHomeBinding
-import com.example.fragments.model.league.LeagueMain
-import com.example.fragments.ui.teamStat.TeamStatActivity
 import kotlinx.android.synthetic.main.fragment_home.*
 
-//import com.example.fragments.ui.fixtures.FixturesActivity
+
 
 class HomeFragment : Fragment() {
 //    private lateinit var binding : FragmentHomeBinding
@@ -34,7 +31,7 @@ private var layoutManager: RecyclerView.LayoutManager? = null
 
     override fun onViewCreated(itemView: View, savedInstanceState: Bundle?) {
         super.onViewCreated(itemView, savedInstanceState)
-        rvStandings.apply {
+        rvStandings1.apply {
             // set a LinearLayoutManager to handle Android
             // RecyclerView behavior
             layoutManager = LinearLayoutManager(activity)
@@ -42,11 +39,15 @@ private var layoutManager: RecyclerView.LayoutManager? = null
             val viewModel = HomeFragmentViewModel()
             viewModel.makeApiCall()
             viewModel.getResponse().observe(viewLifecycleOwner) {
-                adapter = HomeAdapter(it)
+//                adapter = HomeAdapter(it)
             }
         }
 
     }
+
+//    override fun onItemClick(position: Int) {
+//        Toast.makeText(Context, "", Toast.LENGTH_LONG).show()
+//    }
 //    private fun initViewModel(){
 //        val viewModel = HomeFragmentViewModel()
 //        viewModel.makeApiCall()

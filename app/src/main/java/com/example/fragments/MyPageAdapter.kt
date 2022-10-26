@@ -16,6 +16,7 @@ class MyPageAdapter(fragmentActivity: FragmentActivity):FragmentStateAdapter(fra
         return when(position){
             0-> HomeFragment()
             1-> WorkFragment()
+
             else->Fragment()
         }
     }
