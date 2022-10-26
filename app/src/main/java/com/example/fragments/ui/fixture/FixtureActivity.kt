@@ -1,14 +1,11 @@
 package com.example.fragments.ui.fixture
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.fragments.databinding.ActivityAnotherFixtureBinding
-import com.example.fragments.model.fixture.Response
-import com.example.fragments.ui.teamStat.TeamStatActivity
 
 import kotlinx.android.synthetic.main.activity_another_fixture.*
 import kotlinx.android.synthetic.main.days.view.*
@@ -16,10 +13,9 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 
-class FixtureActivity : AppCompatActivity(), FixtureAdapter.OnItemClickListener {
+class FixtureActivity : AppCompatActivity() {
     private lateinit var binding: ActivityAnotherFixtureBinding
     private var adapter : FixtureAdapter? = null
-    private var fixtureResponse: List<Response>? = null
     var leagueId:Int? = 0
 //    var dt:String? = ""
 //    var date:LocalDate? = LocalDate.parse("2020-10-24")
@@ -69,7 +65,7 @@ class FixtureActivity : AppCompatActivity(), FixtureAdapter.OnItemClickListener 
         val viewModel = FixtureViewModel()
         viewModel.makeApiCall(season, leagueId, date!!)
         viewModel.getResponse().observe(this) {
-            adapter = FixtureAdapter(it,this)
+            adapter = FixtureAdapter(it)
             rvDate.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
             (rvDate.layoutManager as LinearLayoutManager).scrollToPosition(10)
             rvDate.adapter = dateAdapter
@@ -86,31 +82,6 @@ class FixtureActivity : AppCompatActivity(), FixtureAdapter.OnItemClickListener 
         if (season != null && leagueId != null) {
             initViewModel(season!!, leagueId!!, date!!)
         }
-    }
-
-    override fun onItemClick(position: Int) {
-
-        var intent = Intent(this, TeamStatActivity::class.java)
-//        var fixtureId = fixtureResponse!![position].fixture.id.toString()
-//        var homeTeamName = fixtureResponse!![position].teams.home.name
-//        var homeTeamLogo = fixtureResponse!![position].teams.home.logo
-//        var awayTeamLogo = fixtureResponse!![position].teams.away.logo
-//        var awayTeamName =fixtureResponse!![position].teams.away.name
-//        var homeScore = fixtureResponse!![position].goals.home.toString()
-//        var awayScore = fixtureResponse!![position].goals.away.toString()
-
-//        intent.putExtra("leagueId", fixtureId)
-//        intent.putExtra("homeTeamName", homeTeamName)
-//        intent.putExtra("homeTeamLogo", homeTeamLogo)
-//        intent.putExtra("awayTeamLogo", awayTeamLogo)
-//        intent.putExtra("awayTeamName", awayTeamName)
-//        intent.putExtra("homeScore", homeScore)
-//        intent.putExtra("awayScore", awayScore)
-
-
-        startActivity(intent)
-
-        adapter?.notifyItemChanged(position)
     }
 
 }
