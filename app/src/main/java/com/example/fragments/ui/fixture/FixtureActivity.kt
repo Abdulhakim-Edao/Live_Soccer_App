@@ -16,7 +16,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 
-class AnotherFixtureActivity : AppCompatActivity(), FixtureAdapter.OnItemClickListener {
+class FixtureActivity : AppCompatActivity(), FixtureAdapter.OnItemClickListener {
     private lateinit var binding: ActivityAnotherFixtureBinding
     private var adapter : FixtureAdapter? = null
     private var fixtureResponse: List<Response>? = null
