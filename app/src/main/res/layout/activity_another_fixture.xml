@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/teal_300"
-    tools:context=".ui.fixture.AnotherFixtureActivity">
+    tools:context=".ui.fixture.FixtureActivity">
 
 
     <LinearLayout
@@ -31,7 +31,7 @@
                 android:id="@+id/rvDate"
 
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="45dp"
                 layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 android:layout_weight="0.06"
                 android:background="@color/purple_700"
@@ -99,6 +99,19 @@
                     app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
 
             </ScrollView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/purple_700"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:textColor="@color/teal_200"
+                android:text="this is where we display icons"></TextView>
 
         </LinearLayout>
 

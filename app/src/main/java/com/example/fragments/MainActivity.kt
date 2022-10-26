@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
         var intent = Intent(this, LeagueActivity::class.java)
         startActivity(intent)
 
+// for pushing to github
 
 //        val adapter = MyPageAdapter(this)
 //        binding.vpager.adapter = adapter

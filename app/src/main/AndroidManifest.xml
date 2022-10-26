@@ -43,7 +43,7 @@
         </activity>
 
         <activity
-            android:name=".ui.fixture.AnotherFixtureActivity"
+            android:name=".ui.fixture.FixtureActivity"
             android:exported="false" >
             <meta-data
                 android:name="android.app.lib_name"

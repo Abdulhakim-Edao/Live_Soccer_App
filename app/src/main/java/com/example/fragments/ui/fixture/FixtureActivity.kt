@@ -13,7 +13,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 
-class AnotherFixtureActivity : AppCompatActivity() {
+class FixtureActivity : AppCompatActivity() {
     private lateinit var binding: ActivityAnotherFixtureBinding
     private var adapter : FixtureAdapter? = null
     var leagueId:Int? = 0
