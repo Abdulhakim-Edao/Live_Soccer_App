@@ -19,13 +19,12 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/tvLeagueName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0.1"
             android:background="@color/light_gray"
             android:gravity="center"
-            android:text="Standings Per Leagues"
+            android:text="Standings per League"
             android:textColor="@color/teal_700"
             android:textSize="25sp"
             android:textStyle="bold" />
@@ -175,4 +174,5 @@
         </LinearLayout>
 
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
