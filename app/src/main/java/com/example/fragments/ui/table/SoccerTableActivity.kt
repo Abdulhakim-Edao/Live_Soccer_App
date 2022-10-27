@@ -11,7 +11,7 @@ import com.example.fragments.ui.league.LeagueTableActivity
 
 class SoccerTableActivity : AppCompatActivity() {
         private var binding : ActivitySoccerTableBinding? = null
-        private var adapter : MyAdapter? = null
+        private var adapter : TableAdapter? = null
         var season:Int? = 2022
         var leagueId:Int? = 0
 
@@ -32,9 +32,10 @@ class SoccerTableActivity : AppCompatActivity() {
             val viewModel = SoccerTableViewModel()
             viewModel.makeApiCall(season, leagueId)
             viewModel.getResponse().observe(this) {
-                adapter = MyAdapter(it)
+                adapter = TableAdapter(it)
                 binding!!.rvStandings.layoutManager = GridLayoutManager(this, 1)
                 binding!!.rvStandings.adapter = adapter
+                binding!!.tvTable.text = it.response[0].league.name
             }
         }
 
