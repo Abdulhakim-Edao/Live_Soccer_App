@@ -23,22 +23,23 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="0.05"
-            android:gravity="center_horizontal"
+            android:background="@color/teal_200"
             android:weightSum="1"
             android:orientation="horizontal">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvDate"
-
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 android:layout_weight="0.06"
-                android:background="@color/purple_700"
+                android:background="@color/teal_200"
                 tools:listitem="@layout/days"
                 android:orientation="horizontal"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
         </LinearLayout>
+
         <!--        add list view with rvDate id here-->
         <!--        <ListView-->
         <!--            android:id="@+id/rvDate"-->
@@ -64,7 +65,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="0.95"
+            android:layout_weight="0.87"
             android:orientation="vertical"
             android:padding="10dp">
             <ScrollView
@@ -103,15 +104,116 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/linearLayout4"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/purple_700"
-            >
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:textColor="@color/teal_200"
-                android:text="this is where we display icons"></TextView>
+            android:layout_height="0dp"
+            android:layout_weight="0.08"
+            android:background="@color/light_gray"
+            android:weightSum="3"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <!--            add linear view for imagebutton and textview-->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:weightSum="10"
+                android:gravity="center">
+                <ImageButton
+                    android:id="@+id/league"
+                    android:layout_width="match_parent"
+                    android:layout_weight="6"
+                    android:background="@color/light_gray"
+                    android:layout_height="0dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/league" />
+                <TextView
+                    android:id="@+id/tvLeague"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="4"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:textSize="12sp"
+                    android:text="League"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_gravity="center"
+                    android:gravity="center" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:weightSum="10"
+                android:gravity="center">
+                <ImageButton
+                    android:id="@+id/table"
+                    android:layout_width="match_parent"
+                    android:layout_weight="6"
+                    android:background="@color/light_gray"
+                    android:layout_height="0dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/table2" />
+                <TextView
+                    android:id="@+id/tvTable"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="4"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:text="Standing"
+                    android:textColor="@color/black"
+                    android:layout_gravity="center"
+                    android:gravity="center" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:weightSum="10"
+                android:gravity="center">
+                <ImageButton
+                    android:id="@+id/account"
+                    android:layout_width="match_parent"
+                    android:layout_weight="6"
+                    android:background="@color/light_gray"
+                    android:layout_height="0dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/account" />
+                <TextView
+                    android:id="@+id/tvAccount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="4"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:textSize="12sp"
+                    android:text="Profile"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_gravity="center"
+                    android:gravity="center" />
+            </LinearLayout>
+
+
+
+
+
 
         </LinearLayout>
 
