@@ -19,6 +19,7 @@ import java.util.stream.Stream
 
 //extend recyclerview adapter
 class DateAdapter(var context : Context) : RecyclerView.Adapter<DateAdapter.DateViewHolder>() {
+    var dateList = mutableListOf<LocalDate>()
 
     class DateViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
 
@@ -37,30 +38,22 @@ class DateAdapter(var context : Context) : RecyclerView.Adapter<DateAdapter.Date
         val sdf = SimpleDateFormat("yyyy-MM-dd")
         val date1 = sdf.format(cal.time)
 
-        val dateList = Stream.iterate(LocalDate.parse(date1), { d -> d.plusDays(1) })
+        dateList = Stream.iterate(LocalDate.parse(date1), { d -> d.plusDays(1) })
             .limit(29)
             .collect(Collectors.toList())
-
-
-
-
-
-
-//        //create 14 days back from today using calendar and add it to the list
-//        val cal2 = Calendar.getInstance()
-//        cal.add(Calendar.DATE, -14)
-//        val sdf2 = SimpleDateFormat("yyyy-MM-dd")
-//        val date2 = sdf.format(cal.time)
-
-
-
+        //add one more day to the list
+        dateList.add(dateList.last().plusDays(1))
+        //add one more
+        dateList.add(dateList.last().plusDays(1))
 
 
         holder.itemView.date.text = dateList[position].toString()
+        //add a day to dateList
+
 
     }
 
     override fun getItemCount(): Int {
-        return 15
+        return 17
     }
 }

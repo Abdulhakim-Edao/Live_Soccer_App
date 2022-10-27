@@ -35,7 +35,7 @@ class FixtureActivity : AppCompatActivity(), FixtureAdapter.OnItemClickListener 
     var date = LocalDate.now()
     var season: Int = 2022
     var dateAdapter: DateAdapter? = null
-    var scrollPosition:Int = 0
+    var scrollPosition:Int = 16
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
