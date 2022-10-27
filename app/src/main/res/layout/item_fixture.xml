@@ -28,7 +28,7 @@
                 <TextView
                     android:id="@+id/team1"
                     android:layout_width="0dp"
-                    android:layout_weight="30"
+                    android:layout_weight="33"
                     android:layout_height="wrap_content"
                     android:padding="5sp"
                     android:text="Team A"
@@ -47,20 +47,12 @@
                     card_view:layout_constraintEnd_toStartOf="@+id/elapsed_time"
                     card_view:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:id="@+id/marginl"
-                    android:layout_width="0dp"
-                    android:layout_weight="5"
-                    android:layout_height="wrap_content"
 
-                    android:text=""
-
-                    />
 
 
             <LinearLayout
                 android:layout_width="0dp"
-                android:layout_weight="10"
+                android:layout_weight="14"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
@@ -86,14 +78,6 @@
 
             </LinearLayout>
 
-            <TextView
-                android:id="@+id/marginr"
-                android:layout_width="0dp"
-                android:layout_weight="5"
-                android:layout_height="wrap_content"
-                android:text=""
-
-                />
 
 
             <ImageView
@@ -106,7 +90,7 @@
             <TextView
                 android:id="@+id/team2"
                 android:layout_width="0dp"
-                android:layout_weight="30"
+                android:layout_weight="33"
                 android:layout_height="wrap_content"
                 android:padding="5sp"
                 android:text="Team B"

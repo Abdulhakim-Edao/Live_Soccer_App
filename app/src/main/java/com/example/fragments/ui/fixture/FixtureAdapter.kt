@@ -11,6 +11,7 @@ import com.example.fragments.model.fixture.FixtureMain
 import com.example.fragments.model.fixture.Response
 import kotlinx.android.synthetic.main.item_fixture.view.*
 import java.text.SimpleDateFormat
+import java.time.LocalDate
 import java.util.*
 
 
@@ -38,7 +39,13 @@ class FixtureAdapter(var res: FixtureMain,  var listener: OnItemClickListener) :
                 itemView.result.text = "VS"
 
                 // get the time from the date object
-                itemView.elapsed_time.text = response1[adapterPosition].fixture.date
+                // create localDate object from date string
+                var time = response1[adapterPosition].fixture.date.substring(11, 16)
+
+
+                itemView.elapsed_time.text = time
+//                itemView.elapsed_time.text = response1[adapterPosition].fixture.date
+
 
             } else {
                 // if the difference is less than 0, then the match is over or on going
