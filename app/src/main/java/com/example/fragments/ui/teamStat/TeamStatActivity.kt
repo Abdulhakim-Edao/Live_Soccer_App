@@ -49,8 +49,8 @@ class TeamStatActivity : AppCompatActivity() {
 
             team1Txt.text = homeTeamName
             team2Txt.text = awayTeamName
-            team1GameTxt.text = homeTeamScore.toString()
-            team2GoalTxt.text = awayTeamScore.toString()
+            team1Score.text = homeTeamScore.toString()
+            team2Score.text = awayTeamScore.toString()
 
             Glide.with(this).load(homeTeamLogo).into(team1Img)
             Glide.with(this).load(homeTeamLogo).into(team2Img)

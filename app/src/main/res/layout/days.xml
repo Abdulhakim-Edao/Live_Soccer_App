@@ -19,5 +19,6 @@
         android:textStyle="bold"
         android:fontFamily="sans-serif-medium"
         android:clickable="true"
+        android:onClick="dateOnClick"
         android:background="@color/teal_200"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

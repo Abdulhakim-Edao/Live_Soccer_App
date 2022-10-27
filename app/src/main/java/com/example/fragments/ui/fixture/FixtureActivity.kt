@@ -32,6 +32,7 @@ class FixtureActivity : AppCompatActivity(), FixtureAdapter.OnItemClickListener 
     var date = sdf.parse(dt)
     var season: Int = 2022
     var dateAdapter: DateAdapter? = null
+    var scrollPosition:Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,7 +46,7 @@ class FixtureActivity : AppCompatActivity(), FixtureAdapter.OnItemClickListener 
 //        )
 
 
-        dateAdapter = DateAdapter(this)
+
 
         var intent = intent
 
@@ -62,6 +63,9 @@ class FixtureActivity : AppCompatActivity(), FixtureAdapter.OnItemClickListener 
         var sdf2 = SimpleDateFormat("yyyy-MM-dd")
         var date2 = sdf2.parse(dt2)
         date = date2
+        //get clicked date position in the recyclerview and store it in a variable scrollPosition to be used in the recyclerview
+        scrollPosition = (rvDate.layoutManager as LinearLayoutManager).findFirstVisibleItemPosition()
+
         initViewModel(season, leagueId!!, date!!)
     }
 
@@ -71,10 +75,11 @@ class FixtureActivity : AppCompatActivity(), FixtureAdapter.OnItemClickListener 
         viewModel.makeApiCall(season, leagueId, date!!)
         viewModel.getResponse().observe(this) {
             fixtureResponse = it.response
+            dateAdapter = DateAdapter(this)
             adapter = FixtureAdapter(it, this)
-            rvDate.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-            (rvDate.layoutManager as LinearLayoutManager).scrollToPosition(10)
-            rvDate.adapter = dateAdapter
+            binding.rvDate.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+            (rvDate.layoutManager as LinearLayoutManager).scrollToPosition(scrollPosition)
+            binding.rvDate.adapter = dateAdapter
             binding.rvStandings.layoutManager = GridLayoutManager(this, 1)
             binding.rvStandings.adapter = adapter
         }
