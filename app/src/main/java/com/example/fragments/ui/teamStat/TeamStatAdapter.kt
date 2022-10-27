@@ -21,9 +21,23 @@ class TeamStatAdapter(res: TeamStat) : RecyclerView.Adapter<TeamStatAdapter.MyVi
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         fun bind(response1: List<Statistic>, response2: List<Statistic>, response: Team) {
-            itemView.rank.text = response1[adapterPosition].value
-            itemView.teamName.text = response1[adapterPosition].type
-            itemView.goalsDiff.text = response2[adapterPosition].value
+            //check if the response1 is not null
+            if (response1.isNullOrEmpty()){
+                itemView.team1Stat.text = "-"
+            }
+            else{
+                itemView.team1Stat.text = response1[0].value.toString()
+            }
+
+            //check if the response2 is not null
+            if (response2.isNullOrEmpty()){
+                itemView.team2Stat.text = "-"
+            }
+            else{
+                itemView.team2Stat.text = response2[0].value.toString()
+            }
+
+            itemView.stats.text = response1[adapterPosition].type
 
         }
 

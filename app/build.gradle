@@ -79,6 +79,4 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.14.2'
 
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.0-alpha02'
-
-    implementation("io.github.cdimascio:dotenv-kotlin:6.3.1")
 }

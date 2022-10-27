@@ -12,12 +12,12 @@ import com.example.fragments.ui.fixture.FixtureActivity
 import com.example.fragments.ui.table.SoccerTableActivity
 
 class LeagueTableActivity : AppCompatActivity(), HomeAdapter.OnItemClickListener {
-    lateinit var binding: ActivityLeagueTableBinding
+    lateinit var binding : ActivityLeagueBinding
     private var adapter: HomeAdapter? = null
     private var leagueResponse: List<Response>? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding= ActivityLeagueTableBinding.inflate((layoutInflater))
+        binding= ActivityLeagueBinding.inflate((layoutInflater))
         setContentView(binding.root)
 
         initViewModel()
@@ -31,12 +31,13 @@ class LeagueTableActivity : AppCompatActivity(), HomeAdapter.OnItemClickListener
             adapter = HomeAdapter(it,this)
             binding!!.rvStandings1.layoutManager = GridLayoutManager(this, 1)
             binding!!.rvStandings1.adapter = adapter
+
         }
     }
 
     override fun onResume() {
         super.onResume()
-        binding = ActivityLeagueTableBinding.inflate(layoutInflater)
+        binding = ActivityLeagueBinding.inflate(layoutInflater)
         setContentView(binding?.root)
         initViewModel()
     }

@@ -15,11 +15,12 @@ class LeagueActivity : AppCompatActivity(), HomeAdapter.OnItemClickListener {
     lateinit var binding: ActivityLeagueBinding
     private var adapter: HomeAdapter? = null
     private var leagueResponse: List<Response>? = null
-            override fun onCreate(savedInstanceState: Bundle?) {
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
                 binding= ActivityLeagueBinding.inflate((layoutInflater))
                 setContentView(binding.root)
-
                 initViewModel()
 
     }
@@ -31,6 +32,7 @@ class LeagueActivity : AppCompatActivity(), HomeAdapter.OnItemClickListener {
             adapter = HomeAdapter(it,this)
             binding!!.rvStandings1.layoutManager = GridLayoutManager(this, 1)
             binding!!.rvStandings1.adapter = adapter
+
         }
     }
 
