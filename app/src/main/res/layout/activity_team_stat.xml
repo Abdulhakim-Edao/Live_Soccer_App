@@ -38,7 +38,7 @@
             android:gravity="center"
             android:textAppearance="@android:style/TextAppearance.Large"
             android:layout_height="match_parent"
-            android:layout_weight="3.5"/>
+            android:layout_weight="3.6"/>
         <ImageView
             android:id="@+id/team1Img"
             android:layout_width="0dp"
@@ -47,12 +47,28 @@
             app:srcCompat="@drawable/soccer" />
 
         <TextView
+            android:id="@+id/team1Score"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.4"
+            android:textAppearance="@android:style/TextAppearance.Large"
+            android:gravity="center"
+            android:text="0"/>
+        <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.4"
             android:textAppearance="@android:style/TextAppearance.Large"
             android:gravity="center"
             android:text="-"/>
+        <TextView
+            android:id="@+id/team2Score"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.4"
+            android:textAppearance="@android:style/TextAppearance.Large"
+            android:gravity="center"
+            android:text="0"/>
 
         <ImageView
             android:id="@+id/team2Img"
@@ -68,7 +84,7 @@
             android:textAppearance="@android:style/TextAppearance.Large"
             android:gravity="center"
             android:layout_height="match_parent"
-            android:layout_weight="3.5"/>
+            android:layout_weight="3.6"/>
 
     </LinearLayout>
 
