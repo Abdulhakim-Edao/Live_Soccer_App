@@ -24,23 +24,7 @@ class MainActivity : AppCompatActivity() {
         var intent = Intent(this, LeagueActivity::class.java)
         startActivity(intent)
 
-// for pushing to github
 
-//        val adapter = MyPageAdapter(this)
-//        binding.vpager.adapter = adapter
-//        binding.tlayout.tabGravity = TabLayout.GRAVITY_FILL
-//
-//        TabLayoutMediator(binding.tlayout, binding.vpager){tab, position ->
-//            when(position){
-//                0->{
-//                    tab.text = "Leagues"
-//                    tab.setIcon(R.drawable.home)
-//                }
-//                1->{
-//                    tab.text = "Standing"
-//                    tab.setIcon(R.drawable.work)
-//                }
-//            }
-//        }.attach()
+
     }
 }

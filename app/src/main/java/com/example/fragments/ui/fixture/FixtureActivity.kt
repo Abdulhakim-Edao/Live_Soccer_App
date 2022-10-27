@@ -84,4 +84,12 @@ class FixtureActivity : AppCompatActivity() {
         }
     }
 
+
+    override fun onItemClick(position: Int) {
+        var intent = Intent(this, TeamStatActivity::class.java)
+        startActivity(intent)
+        adapter?.notifyItemChanged(position)
+    }
+
+
 }
