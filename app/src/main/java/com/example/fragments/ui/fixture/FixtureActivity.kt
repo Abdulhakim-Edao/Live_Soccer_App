@@ -7,18 +7,21 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.fragments.databinding.ActivityAnotherFixtureBinding
+import com.example.fragments.model.fixture.Response
 import com.example.fragments.ui.teamStat.TeamStatActivity
 
 import kotlinx.android.synthetic.main.activity_another_fixture.*
 import kotlinx.android.synthetic.main.days.view.*
 import java.text.SimpleDateFormat
 import java.util.*
+import kotlin.collections.List
 
 
 class FixtureActivity : AppCompatActivity(), FixtureAdapter.OnItemClickListener {
     private lateinit var binding: ActivityAnotherFixtureBinding
     private var adapter : FixtureAdapter? = null
     var leagueId:Int? = 0
+    var fixtureResponse: List<Response>? = null
 //    var dt:String? = ""
 //    var date:LocalDate? = LocalDate.parse("2020-10-24")
     // create today's date with format yyyy-mm-dd using Date
@@ -67,6 +70,7 @@ class FixtureActivity : AppCompatActivity(), FixtureAdapter.OnItemClickListener 
         val viewModel = FixtureViewModel()
         viewModel.makeApiCall(season, leagueId, date!!)
         viewModel.getResponse().observe(this) {
+            fixtureResponse = it.response
             dateAdapter = DateAdapter(this)
             adapter = FixtureAdapter(it, this)
             binding.rvDate.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
@@ -90,6 +94,23 @@ class FixtureActivity : AppCompatActivity(), FixtureAdapter.OnItemClickListener 
 
     override fun onItemClick(position: Int) {
         var intent = Intent(this, TeamStatActivity::class.java)
+
+        var homeTeamName = fixtureResponse!![position].teams.home.name
+        var awayTeamName = fixtureResponse!![position].teams.away.name
+        var homeTeamScore = fixtureResponse!![position].goals.home
+        var awayTeamScore = fixtureResponse!![position].goals.away
+        var homeTeamLogo = fixtureResponse!![position].teams.home.logo
+        var awayTeamLogo = fixtureResponse!![position].teams.away.logo
+        var fixtureId = fixtureResponse!![position].fixture.id
+
+        intent.putExtra("homeTeamName", homeTeamName)
+        intent.putExtra("awayTeamName", awayTeamName)
+        intent.putExtra("homeTeamScore", homeTeamScore)
+        intent.putExtra("awayTeamScore", awayTeamScore)
+        intent.putExtra("homeTeamLogo", homeTeamLogo)
+        intent.putExtra("awayTeamLogo", awayTeamLogo)
+        intent.putExtra("fixtureId", fixtureId)
+
         startActivity(intent)
         adapter?.notifyItemChanged(position)
     }
