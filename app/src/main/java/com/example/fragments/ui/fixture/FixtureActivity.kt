@@ -1,11 +1,13 @@
 package com.example.fragments.ui.fixture
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.fragments.databinding.ActivityAnotherFixtureBinding
+import com.example.fragments.ui.teamStat.TeamStatActivity
 
 import kotlinx.android.synthetic.main.activity_another_fixture.*
 import kotlinx.android.synthetic.main.days.view.*
@@ -13,7 +15,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 
-class FixtureActivity : AppCompatActivity() {
+class FixtureActivity : AppCompatActivity(), FixtureAdapter.OnItemClickListener {
     private lateinit var binding: ActivityAnotherFixtureBinding
     private var adapter : FixtureAdapter? = null
     var leagueId:Int? = 0
@@ -65,7 +67,7 @@ class FixtureActivity : AppCompatActivity() {
         val viewModel = FixtureViewModel()
         viewModel.makeApiCall(season, leagueId, date!!)
         viewModel.getResponse().observe(this) {
-            adapter = FixtureAdapter(it)
+            adapter = FixtureAdapter(it, this)
             rvDate.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
             (rvDate.layoutManager as LinearLayoutManager).scrollToPosition(10)
             rvDate.adapter = dateAdapter
