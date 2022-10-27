@@ -21,9 +21,9 @@ class TeamStatAdapter(res: TeamStat) : RecyclerView.Adapter<TeamStatAdapter.MyVi
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         fun bind(response1: List<Statistic>, response2: List<Statistic>, response: Team) {
-            itemView.rank.text = response1[adapterPosition].value
-            itemView.teamName.text = response1[adapterPosition].type
-            itemView.goalsDiff.text = response2[adapterPosition].value
+            itemView.team1Stat.text = response1[adapterPosition].value
+            itemView.stats.text = response1[adapterPosition].type
+            itemView.team2Stat.text = response2[adapterPosition].value
 
         }
 
