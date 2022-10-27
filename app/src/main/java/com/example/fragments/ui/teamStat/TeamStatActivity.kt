@@ -40,9 +40,8 @@ class TeamStatActivity : AppCompatActivity() {
     }
 
     private fun initViewModel(){
-        fixtureId = intent.getIntExtra("fixtureId",0)
         val viewModel = TeamStatActivityViewModel()
-        viewModel.makeApiCall(fixtureId)
+        viewModel.makeApiCall()
         viewModel.getResponse().observe(this) {
             homeTeamName = intent?.getStringExtra("homeTeamName")
             awayTeamName = intent?.getStringExtra("awayTeamName")
@@ -56,9 +55,10 @@ class TeamStatActivity : AppCompatActivity() {
             team2Txt.text = awayTeamName
             team1Score.text = homeTeamScore.toString()
             team2Score.text = awayTeamScore.toString()
-
+            //use glide to load the image for the home team logo and away team logo
             Glide.with(this).load(homeTeamLogo).into(team1Img)
-            Glide.with(this).load(homeTeamLogo).into(team2Img)
+            Glide.with(this).load(awayTeamLogo).into(team2Img)
+
             adapter = TeamStatAdapter(it)
 
             binding!!.rvStandings.layoutManager = GridLayoutManager(this, 1)

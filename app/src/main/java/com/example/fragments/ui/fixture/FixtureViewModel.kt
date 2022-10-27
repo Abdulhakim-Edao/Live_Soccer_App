@@ -26,7 +26,7 @@ class FixtureViewModel : ViewModel(){
     }
 
     fun makeApiCall(season:Int, leagueId:Int, date: LocalDate) {
-        val baseUrl = "https://api-football-v1.p.rapidapi.com"
+        val baseUrl = "https://9790f1b9-1f8d-4cd6-ad26-83b79e2c5aee.mock.pstmn.io"
         val api = Retrofit.Builder()
             .baseUrl(baseUrl)
             .addConverterFactory(GsonConverterFactory.create())
@@ -34,7 +34,7 @@ class FixtureViewModel : ViewModel(){
             .create(APIInterface::class.java)
 
         viewModelScope.launch {
-            val response = api.getFixtureData(date, leagueId, season).awaitResponse()
+            val response = api.getFixtureData(season, leagueId, date).awaitResponse()
             withContext(Dispatchers.Main){
                 if(response.isSuccessful){
                     response1.value = response.body()
