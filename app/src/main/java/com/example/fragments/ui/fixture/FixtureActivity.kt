@@ -89,27 +89,8 @@ class FixtureActivity : AppCompatActivity(), FixtureAdapter.OnItemClickListener 
     }
 
     override fun onItemClick(position: Int) {
-
         var intent = Intent(this, TeamStatActivity::class.java)
-//        var fixtureId = fixtureResponse!![position].fixture.id.toString()
-//        var homeTeamName = fixtureResponse!![position].teams.home.name
-//        var homeTeamLogo = fixtureResponse!![position].teams.home.logo
-//        var awayTeamLogo = fixtureResponse!![position].teams.away.logo
-//        var awayTeamName =fixtureResponse!![position].teams.away.name
-//        var homeScore = fixtureResponse!![position].goals.home.toString()
-//        var awayScore = fixtureResponse!![position].goals.away.toString()
-
-//        intent.putExtra("leagueId", fixtureId)
-//        intent.putExtra("homeTeamName", homeTeamName)
-//        intent.putExtra("homeTeamLogo", homeTeamLogo)
-//        intent.putExtra("awayTeamLogo", awayTeamLogo)
-//        intent.putExtra("awayTeamName", awayTeamName)
-//        intent.putExtra("homeScore", homeScore)
-//        intent.putExtra("awayScore", awayScore)
-
-
         startActivity(intent)
-
         adapter?.notifyItemChanged(position)
     }
 
