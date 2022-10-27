@@ -9,16 +9,16 @@
     <TextView
         android:id="@+id/date"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
+        android:layout_height="45dp"
+        android:textSize="16sp"
         android:text="Oct-25"
+        android:textColor="@color/teal_700"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:gravity="center"
-        android:textStyle="bold"
         android:fontFamily="sans-serif-medium"
         android:clickable="true"
         android:onClick="dateOnClick"
-        android:background="@color/teal_200"/>
+        android:background="@color/light_gray"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

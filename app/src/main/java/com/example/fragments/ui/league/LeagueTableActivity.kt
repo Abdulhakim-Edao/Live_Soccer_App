@@ -6,17 +6,18 @@ import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.fragments.databinding.ActivityLeagueBinding
+import com.example.fragments.databinding.ActivityLeagueTableBinding
 import com.example.fragments.model.league.Response
 import com.example.fragments.ui.fixture.FixtureActivity
 import com.example.fragments.ui.table.SoccerTableActivity
 
 class LeagueTableActivity : AppCompatActivity(), HomeAdapter.OnItemClickListener {
-    lateinit var binding: ActivityLeagueBinding
+    lateinit var binding: ActivityLeagueTableBinding
     private var adapter: HomeAdapter? = null
     private var leagueResponse: List<Response>? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding= ActivityLeagueBinding.inflate((layoutInflater))
+        binding= ActivityLeagueTableBinding.inflate((layoutInflater))
         setContentView(binding.root)
 
         initViewModel()
@@ -35,7 +36,7 @@ class LeagueTableActivity : AppCompatActivity(), HomeAdapter.OnItemClickListener
 
     override fun onResume() {
         super.onResume()
-        binding = ActivityLeagueBinding.inflate(layoutInflater)
+        binding = ActivityLeagueTableBinding.inflate(layoutInflater)
         setContentView(binding?.root)
         initViewModel()
     }
