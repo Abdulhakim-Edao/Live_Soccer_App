@@ -40,8 +40,9 @@ class TeamStatActivity : AppCompatActivity() {
     }
 
     private fun initViewModel(){
+        fixtureId = intent.getIntExtra("fixtureId",0)
         val viewModel = TeamStatActivityViewModel()
-        viewModel.makeApiCall()
+        viewModel.makeApiCall(fixtureId)
         viewModel.getResponse().observe(this) {
             homeTeamName = intent?.getStringExtra("homeTeamName")
             awayTeamName = intent?.getStringExtra("awayTeamName")

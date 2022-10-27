@@ -21,7 +21,7 @@ class LeagueActivityViewModel:ViewModel() {
     }
 
     fun makeApiCall() {
-        val baseUrl = "https://4c1f0b2a-213b-47b6-af21-89e893ab2c25.mock.pstmn.io/"
+        val baseUrl = "https://api-football-v1.p.rapidapi.com/"
         val api = Retrofit.Builder()
             .baseUrl(baseUrl)
             .addConverterFactory(GsonConverterFactory.create())
@@ -29,7 +29,7 @@ class LeagueActivityViewModel:ViewModel() {
             .create(APIInterface::class.java)
 
         viewModelScope.launch {
-            val response = api.getLegue().awaitResponse()
+            val response = api.getLeague().awaitResponse()
             withContext(Dispatchers.Main){
                 if(response.isSuccessful){
                     response1.value = response.body()

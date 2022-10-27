@@ -21,7 +21,7 @@ class SoccerTableViewModel: ViewModel() {
     }
 
     fun makeApiCall(season: Int, leagueId: Int) {
-        val base_url = "https://184e02d8-b4e2-4149-9419-bb3f9c2f5039.mock.pstmn.io"
+        val base_url = "https://api-football-v1.p.rapidapi.com"
         val api = Retrofit.Builder()
             .baseUrl(base_url)
             .addConverterFactory(GsonConverterFactory.create())
