@@ -42,7 +42,7 @@ class FixtureActivity : AppCompatActivity(), FixtureAdapter.OnItemClickListener 
 //        )
 
 
-        dateAdapter = DateAdapter(this)
+
 
         var intent = intent
 
@@ -67,10 +67,11 @@ class FixtureActivity : AppCompatActivity(), FixtureAdapter.OnItemClickListener 
         val viewModel = FixtureViewModel()
         viewModel.makeApiCall(season, leagueId, date!!)
         viewModel.getResponse().observe(this) {
+            dateAdapter = DateAdapter(this)
             adapter = FixtureAdapter(it, this)
-            rvDate.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+            binding.rvDate.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
             (rvDate.layoutManager as LinearLayoutManager).scrollToPosition(10)
-            rvDate.adapter = dateAdapter
+            binding.rvDate.adapter = dateAdapter
             binding.rvStandings.layoutManager = GridLayoutManager(this, 1)
             binding.rvStandings.adapter = adapter
         }
