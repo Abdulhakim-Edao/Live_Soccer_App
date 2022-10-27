@@ -8,6 +8,8 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.fragments.databinding.ActivityAnotherFixtureBinding
 import com.example.fragments.model.fixture.Response
+import com.example.fragments.ui.league.LeagueActivity
+import com.example.fragments.ui.league.LeagueTableActivity
 import com.example.fragments.ui.teamStat.TeamStatActivity
 
 import kotlinx.android.synthetic.main.activity_another_fixture.*
@@ -119,5 +121,12 @@ class FixtureActivity : AppCompatActivity(), FixtureAdapter.OnItemClickListener 
         adapter?.notifyItemChanged(position)
     }
 
-
+    fun leagueClick(view: View){
+        var intent = Intent(this, LeagueActivity::class.java)
+        startActivity(intent)
+    }
+    fun tableClick(view: View){
+        var intent = Intent(this, LeagueTableActivity::class.java)
+        startActivity(intent)
+    }
 }

@@ -3,6 +3,7 @@ package com.example.fragments.ui.league
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.fragments.databinding.ActivityLeagueBinding
 
@@ -47,6 +48,15 @@ class LeagueActivity : AppCompatActivity(), HomeAdapter.OnItemClickListener {
 
         startActivity(intent)
         adapter?.notifyItemChanged(position)
+    }
+
+    fun leagueClick(view: View){
+        var intent = Intent(this, LeagueActivity::class.java)
+        startActivity(intent)
+    }
+    fun tableClick(view: View){
+        var intent = Intent(this, LeagueTableActivity::class.java)
+        startActivity(intent)
     }
 }
 

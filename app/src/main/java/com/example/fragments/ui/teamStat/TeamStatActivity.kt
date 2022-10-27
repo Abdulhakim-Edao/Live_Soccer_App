@@ -1,11 +1,15 @@
 package com.example.fragments.ui.teamStat
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import com.bumptech.glide.Glide
 import com.example.fragments.databinding.ActivityTeamStatBinding
+import com.example.fragments.ui.league.LeagueActivity
+import com.example.fragments.ui.league.LeagueTableActivity
 import kotlinx.android.synthetic.main.activity_team_stat.*
 import kotlinx.android.synthetic.main.item_standings.view.*
 
@@ -68,4 +72,12 @@ class TeamStatActivity : AppCompatActivity() {
         initViewModel()
     }
 
+    fun leagueClick(view: View){
+        var intent = Intent(this, LeagueActivity::class.java)
+        startActivity(intent)
+    }
+    fun tableClick(view: View){
+        var intent = Intent(this, LeagueTableActivity::class.java)
+        startActivity(intent)
+    }
 }

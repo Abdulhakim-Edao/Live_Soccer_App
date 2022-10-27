@@ -75,7 +75,8 @@
                     android:layout_height="0dp"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentRight="true"
-                    android:src="@drawable/league" />
+                    android:src="@drawable/league"
+                    android:onClick="leagueClick"/>
                 <TextView
                     android:id="@+id/tvLeague"
                     android:layout_width="wrap_content"
@@ -106,7 +107,8 @@
                     android:layout_height="0dp"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentRight="true"
-                    android:src="@drawable/table2" />
+                    android:src="@drawable/table2"
+                    android:onClick="tableClick"/>
                 <TextView
                     android:id="@+id/tvTable"
                     android:layout_width="wrap_content"
@@ -137,7 +139,8 @@
                     android:layout_height="0dp"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentRight="true"
-                    android:src="@drawable/account" />
+                    android:src="@drawable/account"
+                    />
                 <TextView
                     android:id="@+id/tvAccount"
                     android:layout_width="wrap_content"
