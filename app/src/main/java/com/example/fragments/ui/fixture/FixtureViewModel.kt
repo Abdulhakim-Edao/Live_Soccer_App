@@ -25,7 +25,7 @@ class FixtureViewModel : ViewModel(){
         return response1
     }
 
-    fun makeApiCall(season:Int, leagueId:Int, date: Date) {
+    fun makeApiCall(season:Int, leagueId:Int, date: LocalDate) {
         val baseUrl = "https://9790f1b9-1f8d-4cd6-ad26-83b79e2c5aee.mock.pstmn.io"
         val api = Retrofit.Builder()
             .baseUrl(baseUrl)

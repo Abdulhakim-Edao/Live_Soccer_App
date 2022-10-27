@@ -15,6 +15,7 @@ import com.example.fragments.ui.teamStat.TeamStatActivity
 import kotlinx.android.synthetic.main.activity_another_fixture.*
 import kotlinx.android.synthetic.main.days.view.*
 import java.text.SimpleDateFormat
+import java.time.LocalDate
 import java.util.*
 import kotlin.collections.List
 
@@ -24,14 +25,7 @@ class FixtureActivity : AppCompatActivity(), FixtureAdapter.OnItemClickListener 
     private var adapter : FixtureAdapter? = null
     var leagueId:Int? = 0
     var fixtureResponse: List<Response>? = null
-//    var dt:String? = ""
-//    var date:LocalDate? = LocalDate.parse("2020-10-24")
-    // create today's date with format yyyy-mm-dd using Date
-    var dt: String = SimpleDateFormat("yyyy-MM-dd").format(Date())
-
-    //format date
-    var sdf = SimpleDateFormat("yyyy-MM-dd")
-    var date = sdf.parse(dt)
+    var date : LocalDate? = LocalDate.now()
     var season: Int = 2022
     var dateAdapter: DateAdapter? = null
     var scrollPosition:Int = 0
@@ -61,17 +55,15 @@ class FixtureActivity : AppCompatActivity(), FixtureAdapter.OnItemClickListener 
         //fetch the view id of the clicked item and store it in a variable
 
         val dt2 = view.date.text.toString()
-//        var dt: String = SimpleDateFormat("yyyy-MM-dd").format(Date())
-        var sdf2 = SimpleDateFormat("yyyy-MM-dd")
-        var date2 = sdf2.parse(dt2)
-        date = date2
+        date = LocalDate.parse(dt2)
         //get clicked date position in the recyclerview and store it in a variable scrollPosition to be used in the recyclerview
         scrollPosition = (rvDate.layoutManager as LinearLayoutManager).findFirstVisibleItemPosition()
+        //convert date to LocalDate
 
         initViewModel(season, leagueId!!, date!!)
     }
 
-    private fun initViewModel(season:Int, leagueId:Int, date:Date) {
+    private fun initViewModel(season:Int, leagueId:Int, date:LocalDate) {
 
         val viewModel = FixtureViewModel()
         viewModel.makeApiCall(season, leagueId, date!!)
