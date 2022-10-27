@@ -15,6 +15,20 @@
         android:theme="@style/Theme.Fragments"
         tools:targetApi="31">
         <activity
+            android:name=".ui.table.SoccerTableActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ui.league.LeagueTableActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".ui.fixture.FixtureActivity"
             android:exported="false">
             <meta-data
@@ -48,13 +62,7 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity
-            android:name=".ui.fixture.AnotherFixtureActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
+
     </application>
 
 </manifest>

@@ -5,21 +5,20 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.fragments.databinding.ActivityLeagueBinding
-
 import com.example.fragments.model.league.Response
 import com.example.fragments.ui.fixture.FixtureActivity
 import com.example.fragments.ui.table.SoccerTableActivity
 
-class LeagueActivity : AppCompatActivity(), HomeAdapter.OnItemClickListener {
+class LeagueTableActivity : AppCompatActivity(), HomeAdapter.OnItemClickListener {
     lateinit var binding: ActivityLeagueBinding
     private var adapter: HomeAdapter? = null
     private var leagueResponse: List<Response>? = null
-            override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-                binding= ActivityLeagueBinding.inflate((layoutInflater))
-                setContentView(binding.root)
+        binding= ActivityLeagueBinding.inflate((layoutInflater))
+        setContentView(binding.root)
 
-                initViewModel()
+        initViewModel()
 
     }
     private fun initViewModel(){
@@ -41,8 +40,8 @@ class LeagueActivity : AppCompatActivity(), HomeAdapter.OnItemClickListener {
     }
 
     override fun onItemClick(position: Int) {
-    var intent = Intent(this, FixtureActivity::class.java)
-        var leagueId = leagueResponse!![position].league.id.toString()
+        var intent = Intent(this, SoccerTableActivity::class.java)
+        var leagueId = leagueResponse!![position].league.id.toString().toInt()
         intent.putExtra("leagueId", leagueId)
 
         startActivity(intent)
