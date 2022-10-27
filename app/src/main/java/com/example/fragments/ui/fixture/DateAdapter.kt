@@ -41,6 +41,11 @@ class DateAdapter(var context : Context) : RecyclerView.Adapter<DateAdapter.Date
             .limit(29)
             .collect(Collectors.toList())
 
+
+
+
+
+
 //        //create 14 days back from today using calendar and add it to the list
 //        val cal2 = Calendar.getInstance()
 //        cal.add(Calendar.DATE, -14)

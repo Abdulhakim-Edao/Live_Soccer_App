@@ -38,7 +38,7 @@
             app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
             <TextView
-                android:id="@+id/rank"
+                android:id="@+id/team1Stat"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:gravity="center"
@@ -48,7 +48,7 @@
                 />
 
             <TextView
-                android:id="@+id/teamName"
+                android:id="@+id/stats"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -57,7 +57,7 @@
                 tools:text="Team A" />
 
             <TextView
-                android:id="@+id/goalsDiff"
+                android:id="@+id/team2Stat"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
