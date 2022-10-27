@@ -68,6 +68,7 @@ class FixtureActivity : AppCompatActivity(), FixtureAdapter.OnItemClickListener 
         date = date2
         //get clicked date position in the recyclerview and store it in a variable scrollPosition to be used in the recyclerview
         scrollPosition = (rvDate.layoutManager as LinearLayoutManager).findFirstVisibleItemPosition()
+        //convert date to LocalDate
 
         initViewModel(season, leagueId!!, date!!)
     }

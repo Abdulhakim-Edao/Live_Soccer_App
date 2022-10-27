@@ -22,8 +22,8 @@
 
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="0.05"
-            android:background="@color/teal_200"
+            android:layout_weight="0.07"
+            android:background="@color/light_gray"
             android:weightSum="1"
             android:orientation="horizontal">
 
@@ -34,7 +34,7 @@
                 android:layout_gravity="center"
                 layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 android:layout_weight="0.06"
-                android:background="@color/teal_200"
+                android:background="@color/light_gray"
                 tools:listitem="@layout/days"
                 android:orientation="horizontal"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
@@ -65,7 +65,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="0.87"
+            android:layout_weight="0.85"
             android:orientation="vertical"
             android:padding="10dp">
             <ScrollView

@@ -19,12 +19,12 @@
         tools:layout_editor_absoluteX="10dp">
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.5"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.1"
+            android:background="@color/light_gray"
             android:gravity="center"
-            android:textColor="@color/black"
-            android:background="@color/teal_400"
-            android:text="Premier League"
+            android:text="Premier League Table"
+            android:textColor="@color/teal_700"
             android:textSize="25sp"
             android:textStyle="bold" />
 
@@ -33,6 +33,7 @@
             android:id="@+id/linearLayout4"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:background="#A8F3EC"
             android:layout_weight="0.3"
             android:orientation="horizontal"
             card_view:cardBackgroundColor="#FFFF"
@@ -100,7 +101,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="8.4"
+            android:layout_weight="8.8"
             android:layout_marginTop="5dp"
             android:orientation="vertical">
 
@@ -108,7 +109,6 @@
             <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
                 android:scrollbars="vertical|horizontal"
                 app:layout_constraintBottom_toBottomOf="parent"
