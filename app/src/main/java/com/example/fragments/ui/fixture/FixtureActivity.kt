@@ -1,11 +1,13 @@
 package com.example.fragments.ui.fixture
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.fragments.databinding.ActivityAnotherFixtureBinding
+import com.example.fragments.ui.teamStat.TeamStatActivity
 
 import kotlinx.android.synthetic.main.activity_another_fixture.*
 import kotlinx.android.synthetic.main.days.view.*
