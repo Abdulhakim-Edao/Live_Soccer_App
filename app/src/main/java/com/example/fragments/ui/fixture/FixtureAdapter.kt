@@ -10,6 +10,8 @@ import com.example.fragments.R
 import com.example.fragments.model.fixture.FixtureMain
 import com.example.fragments.model.fixture.Response
 import kotlinx.android.synthetic.main.item_fixture.view.*
+import java.text.SimpleDateFormat
+import java.util.*
 
 
 class FixtureAdapter(var res: FixtureMain,  var listener: OnItemClickListener) : RecyclerView.Adapter<FixtureAdapter.MyViewHolder>() {
@@ -19,11 +21,42 @@ class FixtureAdapter(var res: FixtureMain,  var listener: OnItemClickListener) :
         fun bind(response1: List<Response>) {
             itemView.team1.text = response1[adapterPosition].teams.home.name
             itemView.team2.text = response1[adapterPosition].teams.away.name
+
+            // check for upcoming matches, by comparing the date of the match with today's date
+            //get the date from the response
+            var date = response1[adapterPosition].fixture.date
+
+            // get today's date
+            var dt: String = SimpleDateFormat("yyyy-MM-dd").format(Date())
+
+            // get the difference between the two dates
+            var diff = date?.compareTo(dt)
+
+
+            // if the difference is greater than 0, then the match is upcoming
+            if (diff!! > 0) {
+                itemView.result.text = "VS"
+
+                // get the time from the date object
+                itemView.elapsed_time.text = response1[adapterPosition].fixture.date
+
+            } else {
+                // if the difference is less than 0, then the match is over or on going
+                // if match is over
+                if(response1[adapterPosition].fixture.status.short == "FT") {
+                    itemView.elapsed_time.text = "FT"
+                    itemView.elapsed_time.setTextColor(itemView.context.resources.getColor(R.color.black))
+                } else {
+                    itemView.elapsed_time.text = response1[adapterPosition].fixture.status.elapsed.toString()
+                }
+                itemView.result.text = response1[adapterPosition].goals.home.toString() + " - " + response1[adapterPosition].goals.away.toString()
+            }
+
+
             //set image with glide
             Glide.with(itemView.context).load(response1[adapterPosition].teams.home.logo).into(itemView.logo)
             Glide.with(itemView.context).load(response1[adapterPosition].teams.away.logo).into(itemView.logo2)
 
-            itemView.result.text = response1[adapterPosition].goals.home.toString() + " - " + response1[adapterPosition].goals.away.toString()
         }
         init{
             itemView.setOnClickListener(this)
