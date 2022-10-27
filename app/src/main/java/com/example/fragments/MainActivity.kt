@@ -8,6 +8,8 @@ import com.example.fragments.ui.league.MyPageAdapter
 
 import com.example.fragments.databinding.ActivityMainBinding
 import com.example.fragments.ui.league.LeagueActivity
+import com.example.fragments.ui.league.LeagueTableActivity
+import com.example.fragments.ui.table.SoccerTableActivity
 import com.example.fragments.ui.teamStat.TeamStatActivity
 
 

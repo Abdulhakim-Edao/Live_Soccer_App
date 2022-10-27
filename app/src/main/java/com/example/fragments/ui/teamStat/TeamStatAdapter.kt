@@ -17,9 +17,9 @@ import kotlinx.android.synthetic.main.item_team_stat.view.*
 
 class TeamStatAdapter(res: TeamStat) : RecyclerView.Adapter<TeamStatAdapter.MyViewHolder>() {
     private var response = res
-    //create a view holder class
+
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        //create a function to bind the data to the view
+
         fun bind(response1: List<Statistic>, response2: List<Statistic>, response: Team) {
             itemView.rank.text = response1[adapterPosition].value
             itemView.teamName.text = response1[adapterPosition].type

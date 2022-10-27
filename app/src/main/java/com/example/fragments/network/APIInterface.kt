@@ -2,9 +2,11 @@ package com.example.fragments.network
 
 import com.example.fragments.model.fixture.FixtureMain
 import com.example.fragments.model.league.LeagueMain
+import com.example.fragments.model.table.ApiData
 import com.example.fragments.model.teamStat.TeamStat
 import retrofit2.Call
 import retrofit2.http.GET
+import retrofit2.http.Headers
 import retrofit2.http.Query
 import java.util.*
 
@@ -21,6 +23,11 @@ interface APIInterface {
                 @Query("season") season:Int,
                 @Query("date") date: Date
     ): Call<FixtureMain>
+
+    @Headers("X-RapidAPI-Key: 2641dba45emsh054b2ab43feb888p1c791bjsnc5420fc267ac",
+        "X-RapidAPI-Host: api-football-v1.p.rapidapi.com")
+    @GET("/v3/standings")
+    fun getTableData(@Query("season") season: Int, @Query("league") league:Int): Call<ApiData>
 
 }
 
